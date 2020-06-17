@@ -8,12 +8,14 @@
 
 /** 1) Install & Set up mongoose */
 
-// Add mongodb and mongoose to the project's package.json. Then require 
-// mongoose. Store your Mongo Atlas database URI in the private .env file 
+// Add mongodb and mongoose to the project's package.json. Then require
+// mongoose. Store your Mongo Atlas database URI in the private .env file
 // as MONGO_URI. Connect to the database using the following syntax:
 //
-// mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
+// mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true });
 
+let mongoose = require('mongoose')
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 /** # SCHEMAS and MODELS #
@@ -69,7 +71,7 @@ var Person /* = <Your Model> */
 // and `favoriteFoods`. Their types must be conformant to the ones in
 // the Person `Schema`. Then call the method `document.save()` on the returned
 // document instance, passing to it a callback using the Node convention.
-// This is a common pattern, all the **CRUD** methods take a callback 
+// This is a common pattern, all the **CRUD** methods take a callback
 // function like this as the last argument.
 
 // - Example -
@@ -79,7 +81,7 @@ var Person /* = <Your Model> */
 // });
 
 var createAndSavePerson = function(done) {
-  
+
   done(null /*, data*/);
 
 };
@@ -94,9 +96,9 @@ var createAndSavePerson = function(done) {
 // 'arrayOfPeople'.
 
 var createManyPeople = function(arrayOfPeople, done) {
-    
+
     done(null/*, data*/);
-    
+
 };
 
 /** # C[R]UD part II - READ #
@@ -111,7 +113,7 @@ var createManyPeople = function(arrayOfPeople, done) {
 // Use the function argument `personName` as search key.
 
 var findPeopleByName = function(personName, done) {
-  
+
   done(null/*, data*/);
 
 };
@@ -128,7 +130,7 @@ var findPeopleByName = function(personName, done) {
 var findOneByFood = function(food, done) {
 
   done(null/*, data*/);
-  
+
 };
 
 /** 7) Use `Model.findById()` */
@@ -141,12 +143,12 @@ var findOneByFood = function(food, done) {
 // Use the function argument 'personId' as search key.
 
 var findPersonById = function(personId, done) {
-  
+
   done(null/*, data*/);
-  
+
 };
 
-/** # CR[U]D part III - UPDATE # 
+/** # CR[U]D part III - UPDATE #
 /*  ============================ */
 
 /** 8) Classic Update : Find, Edit then Save */
@@ -173,7 +175,7 @@ var findPersonById = function(personId, done) {
 
 var findEditThenSave = function(personId, done) {
   var foodToAdd = 'hamburger';
-  
+
   done(null/*, data*/);
 };
 
@@ -209,9 +211,9 @@ var findAndUpdate = function(personName, done) {
 // As usual, use the function argument `personId` as search key.
 
 var removeById = function(personId, done) {
-  
+
   done(null/*, data*/);
-    
+
 };
 
 /** 11) Delete many People */
@@ -230,7 +232,7 @@ var removeManyPeople = function(done) {
   done(null/*, data*/);
 };
 
-/** # C[R]UD part V -  More about Queries # 
+/** # C[R]UD part V -  More about Queries #
 /*  ======================================= */
 
 /** 12) Chain Query helpers */
@@ -250,7 +252,7 @@ var removeManyPeople = function(done) {
 
 var queryChain = function(done) {
   var foodToSearch = "burrito";
-  
+
   done(null/*, data*/);
 };
 
