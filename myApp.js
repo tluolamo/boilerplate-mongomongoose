@@ -275,11 +275,18 @@ let removeById = function(personId, done) {
 // containing the outcome of the operation, and the number of items affected.
 // Don't forget to pass it to the `done()` callback, since we use it in tests.
 
-var removeManyPeople = function(done) {
-  var nameToRemove = "Mary";
+var removeManyPeople = async function(done) {
+  var nameToRemove = 'Mary';
+  const res = await Person.deleteMany({ name: nameToRemove });
+  console.log(res.deletedCount)
 
-  done(null/*, data*/);
+  done(null, res);
 };
+
+/*createAndSavePerson((err, data) => {
+  //need to update the remove name to match the create name
+  removeManyPeople((err, data) => {})
+})*/
 
 /** # C[R]UD part V -  More about Queries #
 /*  ======================================= */
@@ -299,11 +306,17 @@ var removeManyPeople = function(done) {
 // Chain `.find()`, `.sort()`, `.limit()`, `.select()`, and then `.exec()`,
 // passing the `done(err, data)` callback to it.
 
-var queryChain = function(done) {
-  var foodToSearch = "burrito";
-
-  done(null/*, data*/);
+let queryChain = async function(done) {
+  let foodToSearch = "burrito";
+  //foodToSearch = 'Pizza'
+  let data = await Person.find({favoriteFoods: foodToSearch}).sort({name: 1}).limit(2).select({name: 1, favoriteFoods: 1})//.exec()
+  console.log(data)
+  done(null, data);
 };
+
+//createAndSavePerson((err, data) => {})
+
+queryChain(() => {})
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
