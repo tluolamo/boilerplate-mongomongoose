@@ -255,15 +255,15 @@ var findAndUpdate = function(personName, done) {
 // As usual, use the function argument `personId` as search key.
 
 let removeById = function(personId, done) {
-  console.log(personId)
-  /*Person.findByIdAndRemove(personId, (err, data) => {
+  console.log(personId);
+  Person.findByIdAndRemove(personId, (err, data) => {
       if (err) return console.error(err)
       console.log(data)
-      //done(err, data)
-  })*/
-}
+      done(err, data)
+  })
+};
 
-removeById('5eea317bc93627071aaa32b6', (err, data) => {})
+//removeById("5eea3183e9a49807430dd124", (err, data) => {});
 
 /** 11) Delete many People */
 
