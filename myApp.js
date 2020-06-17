@@ -202,7 +202,7 @@ let findEditThenSave = function(personId, done) {
     data.save((err, data) => {
       if (err) return console.error(err)
       console.log(data)
-      done()
+      done(err, data)
     })
   })
 };
