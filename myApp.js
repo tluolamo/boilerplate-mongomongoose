@@ -263,9 +263,7 @@ let removeById = function(personId, done) {
   })*/
 }
 
-
-//removeById('5eea317bc93627071aaa32b6', (err, data) => {})
-/** 11) Delete many People */
+removeById('5eea317bc93627071aaa32b6', (err, data) => {})
 
 /** 11) Delete many People */
 
